@@ -7,7 +7,7 @@
     "revision": 0
   },
   "properties": {
-    "adaptGameResolutionAtRuntime": true,
+    "adaptGameResolutionAtRuntime": false,
     "antialiasingMode": "MSAA",
     "antialisingEnabledOnMobile": false,
     "folderProject": false,
@@ -16,7 +16,7 @@
     "pixelsRounding": true,
     "projectUuid": "4107d8a1-929e-4737-a0d6-f6d45cdd2d6f",
     "scaleMode": "nearest",
-    "sizeOnStartupMode": "adaptWidth",
+    "sizeOnStartupMode": "scaleOuter",
     "templateSlug": "",
     "useExternalSourceFiles": false,
     "version": "1.0.0",
@@ -97,7 +97,44 @@
     "currentPlatform": "GDevelop JS platform"
   },
   "resources": {
-    "resources": [],
+    "resources": [
+      {
+        "file": "assets/Yellow Button_Hovered.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Yellow Button_Hovered.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/c1e14acb64b9963341656c997853154dc4c86cd1c46fb12bfbe012d99712ef61_Yellow Button_Hovered.png",
+          "name": "Yellow Button_Hovered.png"
+        }
+      },
+      {
+        "file": "assets/Yellow Button_Idle.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Yellow Button_Idle.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/1cacfd123a1eb708837337c27982f6871f5127c5890dbf0775e0f411958fcbf1_Yellow Button_Idle.png",
+          "name": "Yellow Button_Idle.png"
+        }
+      },
+      {
+        "file": "assets/Yellow Button_Pressed.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Yellow Button_Pressed.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/928c3ea4db1da835c9f8cc5b7089a47228350209d2ff489e1484c31e5ce41b3d_Yellow Button_Pressed.png",
+          "name": "Yellow Button_Pressed.png"
+        }
+      }
+    ],
     "resourceFolders": []
   },
   "objects": [],
@@ -105,17 +142,28 @@
     "folderName": "__ROOT"
   },
   "objectsGroups": [],
-  "variables": [],
+  "variables": [
+    {
+      "name": "PlantName",
+      "type": "string",
+      "value": ""
+    },
+    {
+      "name": "FetchedData",
+      "type": "structure",
+      "children": []
+    }
+  ],
   "layouts": [
     {
       "b": 209,
       "disableInputWhenNotFocused": true,
-      "mangledName": "Untitled_32scene",
-      "name": "Untitled scene",
+      "mangledName": "AddPlants",
+      "name": "AddPlants",
       "r": 209,
       "standardSortMethod": true,
       "stopSoundsOnStartup": true,
-      "title": "",
+      "title": "AddPlants",
       "v": 209,
       "uiSettings": {
         "grid": false,
@@ -127,25 +175,104 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.6672773998329974,
+        "zoomFactor": 0.8141881203709912,
         "windowMask": false
       },
       "objectsGroups": [],
-      "variables": [],
+      "variables": [
+        {
+          "name": "FetchedPlant",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "Profile",
+          "type": "structure",
+          "children": [
+            {
+              "name": "ID",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "NameHU",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "NameLA",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "RowDistance",
+              "type": "number",
+              "value": 0
+            }
+          ]
+        }
+      ],
       "instances": [
         {
           "angle": 0,
-          "customSize": true,
-          "depth": 1,
-          "height": 30,
+          "customSize": false,
+          "height": 0,
           "keepRatio": true,
           "layer": "",
           "name": "NameHU",
-          "persistentUuid": "e15ad42f-c1cc-46e7-8a96-78df96a010d1",
-          "width": 177,
-          "x": 340,
-          "y": 62,
+          "persistentUuid": "1898d1d1-7c5e-47e2-8725-a622a2aff94b",
+          "width": 0,
+          "x": 16,
+          "y": 16,
           "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "NameLA",
+          "persistentUuid": "b3438582-93bc-4dec-89d8-d3deb43adf7c",
+          "width": 0,
+          "x": 16,
+          "y": 64,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 48,
+          "height": 96,
+          "layer": "",
+          "name": "Add",
+          "persistentUuid": "b0637150-7710-46be-81b9-6724f71ab452",
+          "width": 128,
+          "x": 320,
+          "y": 11,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "RowDistance",
+          "persistentUuid": "5b98ae9e-547d-4e4f-8c2a-6c249a9df903",
+          "width": 0,
+          "x": 16,
+          "y": 112,
+          "zOrder": 2,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -174,6 +301,136 @@
             "readOnly": false,
             "disabled": false
           }
+        },
+        {
+          "assetStoreId": "",
+          "name": "NameLA",
+          "type": "TextInput::TextInputObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "initialValue": "",
+            "placeholder": "NövényNév (LA)",
+            "fontResourceName": "",
+            "fontSize": 20,
+            "inputType": "text",
+            "textColor": "0;0;0",
+            "fillColor": "255;255;255",
+            "fillOpacity": 255,
+            "borderColor": "0;0;0",
+            "borderOpacity": 255,
+            "borderWidth": 1,
+            "readOnly": false,
+            "disabled": false
+          }
+        },
+        {
+          "assetStoreId": "615de0316452630b9f4f6a39decc82e2449b82c1afd1ff24d6470dad2922177b",
+          "name": "Add",
+          "type": "PanelSpriteButton::PanelSpriteButton",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "LeftPadding": 16,
+            "RightPadding": 16,
+            "PressedLabelOffsetY": 10,
+            "BottomPadding": 32,
+            "TopPadding": 16,
+            "HoveredFadeOutDuration": 0.25
+          },
+          "childrenContent": {
+            "Hovered": {
+              "bottomMargin": 32,
+              "height": 106,
+              "leftMargin": 16,
+              "rightMargin": 16,
+              "texture": "Yellow Button_Hovered.png",
+              "tiled": false,
+              "topMargin": 16,
+              "width": 256
+            },
+            "Idle": {
+              "bottomMargin": 32,
+              "height": 106,
+              "leftMargin": 16,
+              "rightMargin": 16,
+              "texture": "Yellow Button_Idle.png",
+              "tiled": false,
+              "topMargin": 16,
+              "width": 256
+            },
+            "Label": {
+              "bold": false,
+              "italic": false,
+              "smoothed": true,
+              "underlined": false,
+              "string": "Add",
+              "font": "",
+              "textAlignment": "center",
+              "characterSize": 32,
+              "color": {
+                "b": 42,
+                "g": 87,
+                "r": 139
+              },
+              "content": {
+                "bold": false,
+                "isOutlineEnabled": false,
+                "isShadowEnabled": false,
+                "italic": false,
+                "outlineColor": "255;255;255",
+                "outlineThickness": 2,
+                "shadowAngle": 90,
+                "shadowBlurRadius": 2,
+                "shadowColor": "0;0;0",
+                "shadowDistance": 4,
+                "shadowOpacity": 127,
+                "smoothed": true,
+                "underlined": false,
+                "text": "Add",
+                "font": "",
+                "textAlignment": "center",
+                "verticalTextAlignment": "top",
+                "characterSize": 32,
+                "color": "139;87;42"
+              }
+            },
+            "Pressed": {
+              "bottomMargin": 16,
+              "height": 106,
+              "leftMargin": 16,
+              "rightMargin": 16,
+              "texture": "Yellow Button_Pressed.png",
+              "tiled": false,
+              "topMargin": 32,
+              "width": 256
+            }
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "RowDistance",
+          "type": "TextInput::TextInputObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "initialValue": "",
+            "placeholder": "SorTáv",
+            "fontResourceName": "",
+            "fontSize": 20,
+            "inputType": "text",
+            "textColor": "0;0;0",
+            "fillColor": "255;255;255",
+            "fillOpacity": 255,
+            "borderColor": "0;0;0",
+            "borderOpacity": 255,
+            "borderWidth": 1,
+            "readOnly": false,
+            "disabled": false
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -181,6 +438,15 @@
         "children": [
           {
             "objectName": "NameHU"
+          },
+          {
+            "objectName": "NameLA"
+          },
+          {
+            "objectName": "RowDistance"
+          },
+          {
+            "objectName": "Add"
           }
         ]
       },
@@ -233,12 +499,24 @@
       ],
       "behaviorsSharedData": [
         {
+          "name": "Effect",
+          "type": "EffectCapability::EffectBehavior"
+        },
+        {
+          "name": "Flippable",
+          "type": "FlippableCapability::FlippableBehavior"
+        },
+        {
           "name": "Opacity",
           "type": "OpacityCapability::OpacityBehavior"
         },
         {
           "name": "Resizable",
           "type": "ResizableCapability::ResizableBehavior"
+        },
+        {
+          "name": "Scale",
+          "type": "ScalableCapability::ScalableBehavior"
         },
         {
           "name": "Text",
@@ -7345,7 +7623,7 @@
       "name": "PanelSpriteButton",
       "previewIconUrl": "https://resources.gdevelop-app.com/assets/Icons/Line Hero Pack/Master/SVG/Interface Elements/Interface Elements_interface_ui_button_ok_cta_clock_tap.svg",
       "shortDescription": "A button that can be customized.",
-      "version": "1.4.6",
+      "version": "1.5.0",
       "description": [
         "The button can be customized with a background for each state and a label. It handles user interactions and a simple condition can be used to check if it is clicked.",
         "",
@@ -7406,11 +7684,10 @@
                       "conditions": [
                         {
                           "type": {
-                            "value": "PanelSpriteButton::ButtonFSM::PropertyState"
+                            "value": "StringVariable"
                           },
                           "parameters": [
-                            "Object",
-                            "Behavior",
+                            "State",
                             "=",
                             "\"Validated\""
                           ]
@@ -7419,11 +7696,10 @@
                       "actions": [
                         {
                           "type": {
-                            "value": "PanelSpriteButton::ButtonFSM::SetPropertyState"
+                            "value": "SetStringVariable"
                           },
                           "parameters": [
-                            "Object",
-                            "Behavior",
+                            "State",
                             "=",
                             "\"Idle\""
                           ]
@@ -7457,12 +7733,12 @@
                           "actions": [
                             {
                               "type": {
-                                "value": "PanelSpriteButton::ButtonFSM::SetPropertyMouseIsInside"
+                                "value": "SetBooleanVariable"
                               },
                               "parameters": [
-                                "Object",
-                                "Behavior",
-                                "no"
+                                "MouseIsInside",
+                                "False",
+                                ""
                               ]
                             }
                           ]
@@ -7472,11 +7748,12 @@
                           "conditions": [
                             {
                               "type": {
-                                "value": "PanelSpriteButton::ButtonFSM::PropertyShouldCheckHovering"
+                                "value": "BooleanVariable"
                               },
                               "parameters": [
-                                "Object",
-                                "Behavior"
+                                "ShouldCheckHovering",
+                                "True",
+                                ""
                               ]
                             },
                             {
@@ -7493,12 +7770,12 @@
                           "actions": [
                             {
                               "type": {
-                                "value": "PanelSpriteButton::ButtonFSM::SetPropertyMouseIsInside"
+                                "value": "SetBooleanVariable"
                               },
                               "parameters": [
-                                "Object",
-                                "Behavior",
-                                "yes"
+                                "MouseIsInside",
+                                "True",
+                                ""
                               ]
                             }
                           ]
@@ -7521,12 +7798,12 @@
                           "actions": [
                             {
                               "type": {
-                                "value": "PanelSpriteButton::ButtonFSM::SetPropertyTouchIsInside"
+                                "value": "SetBooleanVariable"
                               },
                               "parameters": [
-                                "Object",
-                                "Behavior",
-                                "no"
+                                "TouchIsInside",
+                                "False",
+                                ""
                               ]
                             }
                           ]
@@ -7536,11 +7813,10 @@
                           "conditions": [
                             {
                               "type": {
-                                "value": "PanelSpriteButton::ButtonFSM::PropertyTouchId"
+                                "value": "NumberVariable"
                               },
                               "parameters": [
-                                "Object",
-                                "Behavior",
+                                "TouchId",
                                 "!=",
                                 "0"
                               ]
@@ -7559,12 +7835,12 @@
                           "actions": [
                             {
                               "type": {
-                                "value": "PanelSpriteButton::ButtonFSM::SetPropertyTouchIsInside"
+                                "value": "SetBooleanVariable"
                               },
                               "parameters": [
-                                "Object",
-                                "Behavior",
-                                "yes"
+                                "TouchIsInside",
+                                "True",
+                                ""
                               ]
                             }
                           ]
@@ -7596,11 +7872,10 @@
                           "actions": [
                             {
                               "type": {
-                                "value": "PanelSpriteButton::ButtonFSM::SetPropertyIndex"
+                                "value": "SetNumberVariable"
                               },
                               "parameters": [
-                                "Object",
-                                "Behavior",
+                                "Index",
                                 "=",
                                 "0"
                               ]
@@ -7630,23 +7905,22 @@
                                   "actions": [
                                     {
                                       "type": {
-                                        "value": "PanelSpriteButton::ButtonFSM::SetPropertyTouchId"
+                                        "value": "SetNumberVariable"
                                       },
                                       "parameters": [
-                                        "Object",
-                                        "Behavior",
+                                        "TouchId",
                                         "=",
                                         "StartedTouchOrMouseId(Index)"
                                       ]
                                     },
                                     {
                                       "type": {
-                                        "value": "PanelSpriteButton::ButtonFSM::SetPropertyTouchIsInside"
+                                        "value": "SetBooleanVariable"
                                       },
                                       "parameters": [
-                                        "Object",
-                                        "Behavior",
-                                        "yes"
+                                        "TouchIsInside",
+                                        "True",
+                                        ""
                                       ]
                                     }
                                   ],
@@ -7688,11 +7962,10 @@
                                       "actions": [
                                         {
                                           "type": {
-                                            "value": "PanelSpriteButton::ButtonFSM::SetPropertyState"
+                                            "value": "SetStringVariable"
                                           },
                                           "parameters": [
-                                            "Object",
-                                            "Behavior",
+                                            "State",
                                             "=",
                                             "\"PressedInside\""
                                           ]
@@ -7707,11 +7980,10 @@
                                   "actions": [
                                     {
                                       "type": {
-                                        "value": "PanelSpriteButton::ButtonFSM::SetPropertyIndex"
+                                        "value": "SetNumberVariable"
                                       },
                                       "parameters": [
-                                        "Object",
-                                        "Behavior",
+                                        "Index",
                                         "+",
                                         "1"
                                       ]
@@ -7740,20 +8012,20 @@
                             {
                               "type": {
                                 "inverted": true,
-                                "value": "PanelSpriteButton::ButtonFSM::PropertyMouseIsInside"
+                                "value": "BooleanVariable"
                               },
                               "parameters": [
-                                "Object",
-                                "Behavior"
+                                "MouseIsInside",
+                                "True",
+                                ""
                               ]
                             },
                             {
                               "type": {
-                                "value": "PanelSpriteButton::ButtonFSM::PropertyState"
+                                "value": "StringVariable"
                               },
                               "parameters": [
-                                "Object",
-                                "Behavior",
+                                "State",
                                 "=",
                                 "\"Hovered\""
                               ]
@@ -7762,11 +8034,10 @@
                           "actions": [
                             {
                               "type": {
-                                "value": "PanelSpriteButton::ButtonFSM::SetPropertyState"
+                                "value": "SetStringVariable"
                               },
                               "parameters": [
-                                "Object",
-                                "Behavior",
+                                "State",
                                 "=",
                                 "\"Idle\""
                               ]
@@ -7778,20 +8049,20 @@
                           "conditions": [
                             {
                               "type": {
-                                "value": "PanelSpriteButton::ButtonFSM::PropertyMouseIsInside"
+                                "value": "BooleanVariable"
                               },
                               "parameters": [
-                                "Object",
-                                "Behavior"
+                                "MouseIsInside",
+                                "True",
+                                ""
                               ]
                             },
                             {
                               "type": {
-                                "value": "PanelSpriteButton::ButtonFSM::PropertyState"
+                                "value": "StringVariable"
                               },
                               "parameters": [
-                                "Object",
-                                "Behavior",
+                                "State",
                                 "=",
                                 "\"Idle\""
                               ]
@@ -7800,11 +8071,10 @@
                           "actions": [
                             {
                               "type": {
-                                "value": "PanelSpriteButton::ButtonFSM::SetPropertyState"
+                                "value": "SetStringVariable"
                               },
                               "parameters": [
-                                "Object",
-                                "Behavior",
+                                "State",
                                 "=",
                                 "\"Hovered\""
                               ]
@@ -7817,20 +8087,20 @@
                             {
                               "type": {
                                 "inverted": true,
-                                "value": "PanelSpriteButton::ButtonFSM::PropertyTouchIsInside"
+                                "value": "BooleanVariable"
                               },
                               "parameters": [
-                                "Object",
-                                "Behavior"
+                                "TouchIsInside",
+                                "True",
+                                ""
                               ]
                             },
                             {
                               "type": {
-                                "value": "PanelSpriteButton::ButtonFSM::PropertyState"
+                                "value": "StringVariable"
                               },
                               "parameters": [
-                                "Object",
-                                "Behavior",
+                                "State",
                                 "=",
                                 "\"PressedInside\""
                               ]
@@ -7839,11 +8109,10 @@
                           "actions": [
                             {
                               "type": {
-                                "value": "PanelSpriteButton::ButtonFSM::SetPropertyState"
+                                "value": "SetStringVariable"
                               },
                               "parameters": [
-                                "Object",
-                                "Behavior",
+                                "State",
                                 "=",
                                 "\"PressedOutside\""
                               ]
@@ -7855,20 +8124,20 @@
                           "conditions": [
                             {
                               "type": {
-                                "value": "PanelSpriteButton::ButtonFSM::PropertyTouchIsInside"
+                                "value": "BooleanVariable"
                               },
                               "parameters": [
-                                "Object",
-                                "Behavior"
+                                "TouchIsInside",
+                                "True",
+                                ""
                               ]
                             },
                             {
                               "type": {
-                                "value": "PanelSpriteButton::ButtonFSM::PropertyState"
+                                "value": "StringVariable"
                               },
                               "parameters": [
-                                "Object",
-                                "Behavior",
+                                "State",
                                 "=",
                                 "\"PressedOutside\""
                               ]
@@ -7877,11 +8146,10 @@
                           "actions": [
                             {
                               "type": {
-                                "value": "PanelSpriteButton::ButtonFSM::SetPropertyState"
+                                "value": "SetStringVariable"
                               },
                               "parameters": [
-                                "Object",
-                                "Behavior",
+                                "State",
                                 "=",
                                 "\"PressedInside\""
                               ]
@@ -7916,11 +8184,10 @@
                           "actions": [
                             {
                               "type": {
-                                "value": "PanelSpriteButton::ButtonFSM::SetPropertyTouchId"
+                                "value": "SetNumberVariable"
                               },
                               "parameters": [
-                                "Object",
-                                "Behavior",
+                                "TouchId",
                                 "=",
                                 "0"
                               ]
@@ -7932,11 +8199,10 @@
                               "conditions": [
                                 {
                                   "type": {
-                                    "value": "PanelSpriteButton::ButtonFSM::PropertyState"
+                                    "value": "StringVariable"
                                   },
                                   "parameters": [
-                                    "Object",
-                                    "Behavior",
+                                    "State",
                                     "=",
                                     "\"PressedInside\""
                                   ]
@@ -7945,11 +8211,10 @@
                               "actions": [
                                 {
                                   "type": {
-                                    "value": "PanelSpriteButton::ButtonFSM::SetPropertyState"
+                                    "value": "SetStringVariable"
                                   },
                                   "parameters": [
-                                    "Object",
-                                    "Behavior",
+                                    "State",
                                     "=",
                                     "\"Validated\""
                                   ]
@@ -7962,11 +8227,10 @@
                                 {
                                   "type": {
                                     "inverted": true,
-                                    "value": "PanelSpriteButton::ButtonFSM::PropertyState"
+                                    "value": "StringVariable"
                                   },
                                   "parameters": [
-                                    "Object",
-                                    "Behavior",
+                                    "State",
                                     "=",
                                     "\"PressedInside\""
                                   ]
@@ -7974,11 +8238,10 @@
                                 {
                                   "type": {
                                     "inverted": true,
-                                    "value": "PanelSpriteButton::ButtonFSM::PropertyState"
+                                    "value": "StringVariable"
                                   },
                                   "parameters": [
-                                    "Object",
-                                    "Behavior",
+                                    "State",
                                     "=",
                                     "\"Validated\""
                                   ]
@@ -7987,11 +8250,10 @@
                               "actions": [
                                 {
                                   "type": {
-                                    "value": "PanelSpriteButton::ButtonFSM::SetPropertyState"
+                                    "value": "SetStringVariable"
                                   },
                                   "parameters": [
-                                    "Object",
-                                    "Behavior",
+                                    "State",
                                     "=",
                                     "\"Idle\""
                                   ]
@@ -8074,22 +8336,20 @@
                   "actions": [
                     {
                       "type": {
-                        "value": "PanelSpriteButton::ButtonFSM::SetPropertyState"
+                        "value": "SetStringVariable"
                       },
                       "parameters": [
-                        "Object",
-                        "Behavior",
+                        "State",
                         "=",
                         "\"Idle\""
                       ]
                     },
                     {
                       "type": {
-                        "value": "PanelSpriteButton::ButtonFSM::SetPropertyTouchId"
+                        "value": "SetNumberVariable"
                       },
                       "parameters": [
-                        "Object",
-                        "Behavior",
+                        "TouchId",
                         "=",
                         "0"
                       ]
@@ -8124,11 +8384,10 @@
                   "conditions": [
                     {
                       "type": {
-                        "value": "PanelSpriteButton::ButtonFSM::PropertyState"
+                        "value": "StringVariable"
                       },
                       "parameters": [
-                        "Object",
-                        "Behavior",
+                        "State",
                         "=",
                         "\"Idle\""
                       ]
@@ -8173,11 +8432,10 @@
                   "conditions": [
                     {
                       "type": {
-                        "value": "PanelSpriteButton::ButtonFSM::PropertyState"
+                        "value": "StringVariable"
                       },
                       "parameters": [
-                        "Object",
-                        "Behavior",
+                        "State",
                         "=",
                         "\"Validated\""
                       ]
@@ -8222,11 +8480,10 @@
                   "conditions": [
                     {
                       "type": {
-                        "value": "PanelSpriteButton::ButtonFSM::PropertyState"
+                        "value": "StringVariable"
                       },
                       "parameters": [
-                        "Object",
-                        "Behavior",
+                        "State",
                         "=",
                         "\"Hovered\""
                       ]
@@ -8271,11 +8528,10 @@
                   "conditions": [
                     {
                       "type": {
-                        "value": "PanelSpriteButton::ButtonFSM::PropertyState"
+                        "value": "StringVariable"
                       },
                       "parameters": [
-                        "Object",
-                        "Behavior",
+                        "State",
                         "=",
                         "\"Hovered\""
                       ]
@@ -8297,11 +8553,10 @@
                   "conditions": [
                     {
                       "type": {
-                        "value": "PanelSpriteButton::ButtonFSM::PropertyState"
+                        "value": "StringVariable"
                       },
                       "parameters": [
-                        "Object",
-                        "Behavior",
+                        "State",
                         "=",
                         "\"PressedOutside\""
                       ]
@@ -8346,11 +8601,10 @@
                   "conditions": [
                     {
                       "type": {
-                        "value": "PanelSpriteButton::ButtonFSM::PropertyState"
+                        "value": "StringVariable"
                       },
                       "parameters": [
-                        "Object",
-                        "Behavior",
+                        "State",
                         "=",
                         "\"PressedInside\""
                       ]
@@ -8395,11 +8649,10 @@
                   "conditions": [
                     {
                       "type": {
-                        "value": "PanelSpriteButton::ButtonFSM::PropertyState"
+                        "value": "StringVariable"
                       },
                       "parameters": [
-                        "Object",
-                        "Behavior",
+                        "State",
                         "=",
                         "\"PressedOutside\""
                       ]
@@ -8849,10 +9102,10 @@
                             },
                             {
                               "type": {
-                                "value": "PanelSpriteButton::PanelSpriteButton::PropertyHoveredFadeOutDuration"
+                                "value": "NumberVariable"
                               },
                               "parameters": [
-                                "Object",
+                                "HoveredFadeOutDuration",
                                 ">",
                                 "0"
                               ]
@@ -8880,10 +9133,10 @@
                           "conditions": [
                             {
                               "type": {
-                                "value": "PanelSpriteButton::PanelSpriteButton::PropertyHoveredFadeOutDuration"
+                                "value": "NumberVariable"
                               },
                               "parameters": [
-                                "Object",
+                                "HoveredFadeOutDuration",
                                 "=",
                                 "0"
                               ]
@@ -9756,10 +10009,12 @@
                   "conditions": [
                     {
                       "type": {
-                        "value": "GetArgumentAsBoolean"
+                        "value": "BooleanVariable"
                       },
                       "parameters": [
-                        "\"ShouldActivate\""
+                        "ShouldActivate",
+                        "True",
+                        ""
                       ]
                     }
                   ],
@@ -9782,10 +10037,12 @@
                     {
                       "type": {
                         "inverted": true,
-                        "value": "GetArgumentAsBoolean"
+                        "value": "BooleanVariable"
                       },
                       "parameters": [
-                        "\"ShouldActivate\""
+                        "ShouldActivate",
+                        "True",
+                        ""
                       ]
                     }
                   ],
