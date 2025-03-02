@@ -28,7 +28,35 @@
     "maxFPS": 60,
     "minFPS": 20,
     "verticalSync": false,
-    "platformSpecificAssets": {},
+    "platformSpecificAssets": {
+      "android-icon-144": "",
+      "android-icon-192": "",
+      "android-icon-36": "",
+      "android-icon-48": "",
+      "android-icon-72": "",
+      "android-icon-96": "",
+      "android-windowSplashScreenAnimatedIcon": "",
+      "desktop-icon-512": "",
+      "ios-icon-100": "",
+      "ios-icon-1024": "",
+      "ios-icon-114": "",
+      "ios-icon-120": "",
+      "ios-icon-144": "",
+      "ios-icon-152": "",
+      "ios-icon-167": "",
+      "ios-icon-180": "",
+      "ios-icon-20": "",
+      "ios-icon-29": "",
+      "ios-icon-40": "",
+      "ios-icon-50": "",
+      "ios-icon-57": "",
+      "ios-icon-58": "",
+      "ios-icon-60": "",
+      "ios-icon-72": "",
+      "ios-icon-76": "",
+      "ios-icon-80": "",
+      "ios-icon-87": ""
+    },
     "loadingScreen": {
       "backgroundColor": 0,
       "backgroundFadeInDuration": 0.2,
@@ -53,7 +81,13 @@
     "authorUsernames": [],
     "categories": [],
     "playableDevices": [],
-    "extensionProperties": [],
+    "extensionProperties": [
+      {
+        "extension": "Firebase",
+        "property": "FirebaseConfig",
+        "value": "{\n  \"apiKey\": \"AIzaSyBWmGxW8BnWGzNuYBN2vTmKGgrp_1bakME\",\n  \"authDomain\": \"gdev-gardenplanner.firebaseapp.com\",\n  \"projectId\": \"gdev-gardenplanner\",\n  \"storageBucket\": \"gdev-gardenplanner.firebasestorage.app\",\n  \"messagingSenderId\": \"402318723945\",\n  \"appId\": \"1:402318723945:web:d5c308313a75aea90f8bf8\",\n  \"measurementId\": \"G-QS7JCMFPR3\"\n}"
+      }
+    ],
     "platforms": [
       {
         "name": "GDevelop JS platform"
@@ -196,7 +230,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.6406912462476483,
+        "zoomFactor": 0.45985214267363383,
         "windowMask": false
       },
       "objectsGroups": [
@@ -214,6 +248,26 @@
           "name": "UIBG_open",
           "type": "boolean",
           "value": false
+        },
+        {
+          "name": "DataQueryResult",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "DataToLoad",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "DataCount",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "DataStructure",
+          "type": "array",
+          "children": []
         }
       ],
       "instances": [
@@ -534,6 +588,108 @@
           "x": 1960,
           "y": 920,
           "zOrder": 21,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 66,
+          "keepRatio": true,
+          "layer": "",
+          "name": "inputID",
+          "persistentUuid": "ec25ccf7-0a83-4685-b47b-9ac40786e8e5",
+          "width": 150,
+          "x": 2566,
+          "y": 112,
+          "zOrder": 22,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 69,
+          "keepRatio": true,
+          "layer": "",
+          "name": "inputNameHU",
+          "persistentUuid": "46410bf4-de97-4fe9-986b-ef86d1b90664",
+          "width": 313,
+          "x": 2551,
+          "y": 240,
+          "zOrder": 23,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 63,
+          "keepRatio": true,
+          "layer": "",
+          "name": "inputNameLA",
+          "persistentUuid": "fe8269f2-a330-4b1f-a710-3a8119e0c2aa",
+          "width": 316,
+          "x": 2555,
+          "y": 365,
+          "zOrder": 24,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 79,
+          "keepRatio": true,
+          "layer": "",
+          "name": "inputRowDistance",
+          "persistentUuid": "84256123-3e88-4614-b67c-38e01af13119",
+          "width": 164,
+          "x": 2555,
+          "y": 440,
+          "zOrder": 25,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 70,
+          "keepRatio": true,
+          "layer": "",
+          "name": "inputTypeHU",
+          "persistentUuid": "b835bc46-6dd9-4eab-b515-6b3e859f2795",
+          "width": 382,
+          "x": 2542,
+          "y": 949,
+          "zOrder": 26,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 68,
+          "keepRatio": true,
+          "layer": "",
+          "name": "inputTypeLA",
+          "persistentUuid": "7cbcba28-a4d8-4c52-b562-ae5879816dff",
+          "width": 387,
+          "x": 2544,
+          "y": 1031,
+          "zOrder": 27,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -1371,6 +1527,168 @@
             "characterSize": 40,
             "color": "255;255;255"
           }
+        },
+        {
+          "assetStoreId": "",
+          "name": "inputID",
+          "type": "TextInput::TextInputObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "initialValue": "",
+            "placeholder": "ID",
+            "fontResourceName": "",
+            "fontSize": 20,
+            "inputType": "number",
+            "textColor": "0;0;0",
+            "fillColor": "45;49;57",
+            "fillOpacity": 255,
+            "borderColor": "255;255;255",
+            "borderOpacity": 255,
+            "borderWidth": 1,
+            "readOnly": true,
+            "disabled": false,
+            "paddingX": 2,
+            "paddingY": 1,
+            "textAlign": "left",
+            "maxLength": 0
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "inputNameHU",
+          "type": "TextInput::TextInputObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "initialValue": "",
+            "placeholder": "NameHU",
+            "fontResourceName": "",
+            "fontSize": 20,
+            "inputType": "text",
+            "textColor": "0;0;0",
+            "fillColor": "45;49;57",
+            "fillOpacity": 255,
+            "borderColor": "255;255;255",
+            "borderOpacity": 255,
+            "borderWidth": 1,
+            "readOnly": false,
+            "disabled": false,
+            "paddingX": 2,
+            "paddingY": 1,
+            "textAlign": "left",
+            "maxLength": 0
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "inputNameLA",
+          "type": "TextInput::TextInputObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "initialValue": "",
+            "placeholder": "NameLA",
+            "fontResourceName": "",
+            "fontSize": 20,
+            "inputType": "text",
+            "textColor": "0;0;0",
+            "fillColor": "45;49;57",
+            "fillOpacity": 255,
+            "borderColor": "255;255;255",
+            "borderOpacity": 255,
+            "borderWidth": 1,
+            "readOnly": false,
+            "disabled": false,
+            "paddingX": 2,
+            "paddingY": 1,
+            "textAlign": "left",
+            "maxLength": 0
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "inputRowDistance",
+          "type": "TextInput::TextInputObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "initialValue": "",
+            "placeholder": "RowDistance",
+            "fontResourceName": "",
+            "fontSize": 20,
+            "inputType": "number",
+            "textColor": "0;0;0",
+            "fillColor": "45;49;57",
+            "fillOpacity": 255,
+            "borderColor": "255;255;255",
+            "borderOpacity": 255,
+            "borderWidth": 1,
+            "readOnly": false,
+            "disabled": false,
+            "paddingX": 2,
+            "paddingY": 1,
+            "textAlign": "left",
+            "maxLength": 0
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "inputTypeHU",
+          "type": "TextInput::TextInputObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "initialValue": "",
+            "placeholder": "TypeHU",
+            "fontResourceName": "",
+            "fontSize": 20,
+            "inputType": "text",
+            "textColor": "0;0;0",
+            "fillColor": "45;49;57",
+            "fillOpacity": 255,
+            "borderColor": "255;255;255",
+            "borderOpacity": 255,
+            "borderWidth": 1,
+            "readOnly": false,
+            "disabled": false,
+            "paddingX": 2,
+            "paddingY": 1,
+            "textAlign": "left",
+            "maxLength": 0
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "inputTypeLA",
+          "type": "TextInput::TextInputObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "initialValue": "",
+            "placeholder": "TypeLA",
+            "fontResourceName": "",
+            "fontSize": 20,
+            "inputType": "text",
+            "textColor": "0;0;0",
+            "fillColor": "45;49;57",
+            "fillOpacity": 255,
+            "borderColor": "255;255;255",
+            "borderOpacity": 255,
+            "borderWidth": 1,
+            "readOnly": false,
+            "disabled": false,
+            "paddingX": 2,
+            "paddingY": 1,
+            "textAlign": "left",
+            "maxLength": 0
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -1389,10 +1707,19 @@
             "objectName": "IDLocation"
           },
           {
+            "objectName": "inputID"
+          },
+          {
             "objectName": "NewText"
           },
           {
             "objectName": "Namelocation"
+          },
+          {
+            "objectName": "inputNameHU"
+          },
+          {
+            "objectName": "inputNameLA"
           },
           {
             "objectName": "NewText2"
@@ -1407,6 +1734,9 @@
             "objectName": "Rowdistancelocation"
           },
           {
+            "objectName": "inputRowDistance"
+          },
+          {
             "objectName": "Uploadplant"
           },
           {
@@ -1417,6 +1747,12 @@
           },
           {
             "objectName": "Typeboxlocation"
+          },
+          {
+            "objectName": "inputTypeHU"
+          },
+          {
+            "objectName": "inputTypeLA"
           },
           {
             "objectName": "NewText8"
@@ -1887,6 +2223,135 @@
                     "NewText8",
                     "=",
                     "UIBG_upload.X() + 40"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Getting Data From Firebase",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "DepartScene"
+                  },
+                  "parameters": [
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Firebase::FirestoreStartQuery"
+                  },
+                  "parameters": [
+                    "\"GetPlants\"",
+                    "\"Plants\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Firebase::FirestoreExecuteQuery"
+                  },
+                  "parameters": [
+                    "\"GetPlants\"",
+                    "DataQueryResult",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Wait"
+                  },
+                  "parameters": [
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "DataToLoad",
+                    "=",
+                    "ToNumber(ToJSON(DataQueryResult.size))"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "DataToLoad",
+                    "!=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "inputID",
+                    "Text",
+                    "=",
+                    "DataToLoad"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Repeat",
+                  "repeatExpression": "DataToLoad",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Firebase::FirestoreGetField"
+                      },
+                      "parameters": [
+                        "DataStructure[DataCount]",
+                        "\"Plants\"",
+                        "DataCount",
+                        "",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "DataCount",
+                        "+",
+                        "1"
+                      ]
+                    }
                   ]
                 }
               ]
