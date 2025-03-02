@@ -1,7 +1,7 @@
 {
   "firstLayout": "",
   "gdVersion": {
-    "build": 221,
+    "build": 223,
     "major": 5,
     "minor": 5,
     "revision": 0
@@ -18,7 +18,6 @@
     "scaleMode": "nearest",
     "sizeOnStartupMode": "scaleOuter",
     "templateSlug": "",
-    "useExternalSourceFiles": false,
     "version": "1.0.0",
     "name": "Garden Planner Gdev",
     "description": "",
@@ -86,7 +85,7 @@
       {
         "extension": "Firebase",
         "property": "FirebaseConfig",
-        "value": "{\n  \"apiKey\": \"AIzaSyBWmGxW8BnWGzNuYBN2vTmKGgrp_1bakME\",\n  \"authDomain\": \"gdev-gardenplanner.firebaseapp.com\",\n  \"projectId\": \"gdev-gardenplanner\",\n  \"storageBucket\": \"gdev-gardenplanner.firebasestorage.app\",\n  \"messagingSenderId\": \"402318723945\",\n  \"appId\": \"1:402318723945:web:d5c308313a75aea90f8bf8\",\n  \"measurementId\": \"G-QS7JCMFPR3\"\n};"
+        "value": "{\n  \"apiKey\": \"AIzaSyBWmGxW8BnWGzNuYBN2vTmKGgrp_1bakME\",\n  \"authDomain\": \"gdev-gardenplanner.firebaseapp.com\",\n  \"projectId\": \"gdev-gardenplanner\",\n  \"storageBucket\": \"gdev-gardenplanner.firebasestorage.app\",\n  \"messagingSenderId\": \"402318723945\",\n  \"appId\": \"1:402318723945:web:d5c308313a75aea90f8bf8\",\n  \"measurementId\": \"G-QS7JCMFPR3\"\n}"
       }
     ],
     "platforms": [
@@ -142,18 +141,7 @@
     "folderName": "__ROOT"
   },
   "objectsGroups": [],
-  "variables": [
-    {
-      "name": "PlantName",
-      "type": "string",
-      "value": ""
-    },
-    {
-      "name": "FetchedData",
-      "type": "structure",
-      "children": []
-    }
-  ],
+  "variables": [],
   "layouts": [
     {
       "b": 209,
@@ -175,25 +163,20 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.8141881203709912,
+        "zoomFactor": 0.8141881203709914,
         "windowMask": false
       },
       "objectsGroups": [],
       "variables": [
         {
-          "name": "FetchedPlant",
-          "type": "string",
-          "value": ""
+          "name": "DataCount",
+          "type": "number",
+          "value": 0
         },
         {
-          "name": "Profile",
+          "name": "Data",
           "type": "structure",
           "children": [
-            {
-              "name": "ID",
-              "type": "number",
-              "value": 0
-            },
             {
               "name": "NameHU",
               "type": "string",
@@ -205,9 +188,29 @@
               "value": ""
             },
             {
+              "name": "Neighboring",
+              "type": "array",
+              "children": []
+            },
+            {
+              "name": "Non-Neighboring",
+              "type": "array",
+              "children": []
+            },
+            {
               "name": "RowDistance",
               "type": "number",
               "value": 0
+            },
+            {
+              "name": "TypesHU",
+              "type": "array",
+              "children": []
+            },
+            {
+              "name": "TypesLA",
+              "type": "array",
+              "children": []
             }
           ]
         }
@@ -222,8 +225,8 @@
           "name": "NameHU",
           "persistentUuid": "1898d1d1-7c5e-47e2-8725-a622a2aff94b",
           "width": 0,
-          "x": 16,
-          "y": 16,
+          "x": 970,
+          "y": 10,
           "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
@@ -238,8 +241,8 @@
           "name": "NameLA",
           "persistentUuid": "b3438582-93bc-4dec-89d8-d3deb43adf7c",
           "width": 0,
-          "x": 16,
-          "y": 64,
+          "x": 970,
+          "y": 60,
           "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
@@ -249,13 +252,13 @@
           "angle": 0,
           "customSize": true,
           "depth": 48,
-          "height": 96,
+          "height": 80,
           "layer": "",
           "name": "Add",
           "persistentUuid": "b0637150-7710-46be-81b9-6724f71ab452",
-          "width": 128,
-          "x": 320,
-          "y": 11,
+          "width": 300,
+          "x": 970,
+          "y": 630,
           "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
@@ -270,9 +273,74 @@
           "name": "RowDistance",
           "persistentUuid": "5b98ae9e-547d-4e4f-8c2a-6c249a9df903",
           "width": 0,
-          "x": 16,
-          "y": 112,
-          "zOrder": 2,
+          "x": 970,
+          "y": 110,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "TypesHU",
+          "persistentUuid": "6697d145-665f-4c34-9b44-9be58339f7e1",
+          "width": 0,
+          "x": 970,
+          "y": 160,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "TypesLA",
+          "persistentUuid": "236b7bb6-e264-4dbc-8d07-b4e9fe8ea8d2",
+          "width": 0,
+          "x": 970,
+          "y": 210,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 30,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Neighboring",
+          "persistentUuid": "fd292a78-8a4a-498a-aedb-5c473d1c7589",
+          "width": 300,
+          "x": 970,
+          "y": 260,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Non_Neighboring",
+          "persistentUuid": "b45f746a-bfaf-4364-ab6d-60254639ca46",
+          "width": 0,
+          "x": 970,
+          "y": 310,
+          "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -421,6 +489,98 @@
             "placeholder": "SorTáv",
             "fontResourceName": "",
             "fontSize": 20,
+            "inputType": "number",
+            "textColor": "0;0;0",
+            "fillColor": "255;255;255",
+            "fillOpacity": 255,
+            "borderColor": "0;0;0",
+            "borderOpacity": 255,
+            "borderWidth": 1,
+            "readOnly": false,
+            "disabled": false
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "TypesHU",
+          "type": "TextInput::TextInputObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "initialValue": "",
+            "placeholder": "Fajták(HU)",
+            "fontResourceName": "",
+            "fontSize": 20,
+            "inputType": "text",
+            "textColor": "0;0;0",
+            "fillColor": "255;255;255",
+            "fillOpacity": 255,
+            "borderColor": "0;0;0",
+            "borderOpacity": 255,
+            "borderWidth": 1,
+            "readOnly": false,
+            "disabled": false
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "TypesLA",
+          "type": "TextInput::TextInputObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "initialValue": "",
+            "placeholder": "Fajták(LA)",
+            "fontResourceName": "",
+            "fontSize": 20,
+            "inputType": "text",
+            "textColor": "0;0;0",
+            "fillColor": "255;255;255",
+            "fillOpacity": 255,
+            "borderColor": "0;0;0",
+            "borderOpacity": 255,
+            "borderWidth": 1,
+            "readOnly": false,
+            "disabled": false
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "Neighboring",
+          "type": "TextInput::TextInputObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "initialValue": "",
+            "placeholder": "Ültethető mellé",
+            "fontResourceName": "",
+            "fontSize": 20,
+            "inputType": "text",
+            "textColor": "0;0;0",
+            "fillColor": "255;255;255",
+            "fillOpacity": 255,
+            "borderColor": "0;0;0",
+            "borderOpacity": 255,
+            "borderWidth": 1,
+            "readOnly": false,
+            "disabled": false
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "Non_Neighboring",
+          "type": "TextInput::TextInputObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "initialValue": "",
+            "placeholder": "Nem ültethető mellé",
+            "fontResourceName": "",
+            "fontSize": 20,
             "inputType": "text",
             "textColor": "0;0;0",
             "fillColor": "255;255;255",
@@ -446,11 +606,55 @@
             "objectName": "RowDistance"
           },
           {
+            "objectName": "TypesHU"
+          },
+          {
+            "objectName": "TypesLA"
+          },
+          {
+            "objectName": "Neighboring"
+          },
+          {
+            "objectName": "Non_Neighboring"
+          },
+          {
             "objectName": "Add"
           }
         ]
       },
-      "events": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "Firebase::FirestoreGetDocument"
+              },
+              "parameters": [
+                "\"Plants\"",
+                "\"0\"",
+                "Data",
+                ""
+              ]
+            }
+          ]
+        }
+      ],
       "layers": [
         {
           "ambientLightColorB": 200,
@@ -10345,6 +10549,5 @@
       ]
     }
   ],
-  "externalLayouts": [],
-  "externalSourceFiles": []
+  "externalLayouts": []
 }
