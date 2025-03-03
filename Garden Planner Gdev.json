@@ -1,7 +1,7 @@
 {
   "firstLayout": "",
   "gdVersion": {
-    "build": 221,
+    "build": 224,
     "major": 5,
     "minor": 5,
     "revision": 0
@@ -18,7 +18,6 @@
     "scaleMode": "nearest",
     "sizeOnStartupMode": "scaleOuter",
     "templateSlug": "",
-    "useExternalSourceFiles": false,
     "version": "1.0.0",
     "name": "Garden Planner Gdev",
     "description": "",
@@ -86,7 +85,7 @@
       {
         "extension": "Firebase",
         "property": "FirebaseConfig",
-        "value": "{\n  \"apiKey\": \"AIzaSyBWmGxW8BnWGzNuYBN2vTmKGgrp_1bakME\",\n  \"authDomain\": \"gdev-gardenplanner.firebaseapp.com\",\n  \"projectId\": \"gdev-gardenplanner\",\n  \"storageBucket\": \"gdev-gardenplanner.firebasestorage.app\",\n  \"messagingSenderId\": \"402318723945\",\n  \"appId\": \"1:402318723945:web:d5c308313a75aea90f8bf8\",\n  \"measurementId\": \"G-QS7JCMFPR3\"\n};"
+        "value": "{\n  \"apiKey\": \"AIzaSyBWmGxW8BnWGzNuYBN2vTmKGgrp_1bakME\",\n  \"authDomain\": \"gdev-gardenplanner.firebaseapp.com\",\n  \"projectId\": \"gdev-gardenplanner\",\n  \"storageBucket\": \"gdev-gardenplanner.firebasestorage.app\",\n  \"messagingSenderId\": \"402318723945\",\n  \"appId\": \"1:402318723945:web:d5c308313a75aea90f8bf8\",\n  \"measurementId\": \"G-QS7JCMFPR3\"\n}"
       }
     ],
     "platforms": [
@@ -142,18 +141,7 @@
     "folderName": "__ROOT"
   },
   "objectsGroups": [],
-  "variables": [
-    {
-      "name": "PlantName",
-      "type": "string",
-      "value": ""
-    },
-    {
-      "name": "FetchedData",
-      "type": "structure",
-      "children": []
-    }
-  ],
+  "variables": [],
   "layouts": [
     {
       "b": 209,
@@ -175,41 +163,30 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.8141881203709912,
+        "zoomFactor": 0.6244537826599992,
         "windowMask": false
       },
       "objectsGroups": [],
       "variables": [
         {
-          "name": "FetchedPlant",
-          "type": "string",
-          "value": ""
+          "name": "DataCount",
+          "type": "number",
+          "value": 0
         },
         {
-          "name": "Profile",
-          "type": "structure",
-          "children": [
-            {
-              "name": "ID",
-              "type": "number",
-              "value": 0
-            },
-            {
-              "name": "NameHU",
-              "type": "string",
-              "value": ""
-            },
-            {
-              "name": "NameLA",
-              "type": "string",
-              "value": ""
-            },
-            {
-              "name": "RowDistance",
-              "type": "number",
-              "value": 0
-            }
-          ]
+          "name": "DataToLoad",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "DataQueryResult",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "DataStructure",
+          "type": "array",
+          "children": []
         }
       ],
       "instances": [
@@ -222,8 +199,8 @@
           "name": "NameHU",
           "persistentUuid": "1898d1d1-7c5e-47e2-8725-a622a2aff94b",
           "width": 0,
-          "x": 16,
-          "y": 16,
+          "x": 970,
+          "y": 60,
           "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
@@ -238,8 +215,8 @@
           "name": "NameLA",
           "persistentUuid": "b3438582-93bc-4dec-89d8-d3deb43adf7c",
           "width": 0,
-          "x": 16,
-          "y": 64,
+          "x": 970,
+          "y": 110,
           "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
@@ -249,13 +226,13 @@
           "angle": 0,
           "customSize": true,
           "depth": 48,
-          "height": 96,
+          "height": 80,
           "layer": "",
           "name": "Add",
           "persistentUuid": "b0637150-7710-46be-81b9-6724f71ab452",
-          "width": 128,
-          "x": 320,
-          "y": 11,
+          "width": 300,
+          "x": 970,
+          "y": 530,
           "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
@@ -270,9 +247,106 @@
           "name": "RowDistance",
           "persistentUuid": "5b98ae9e-547d-4e4f-8c2a-6c249a9df903",
           "width": 0,
-          "x": 16,
-          "y": 112,
+          "x": 970,
+          "y": 160,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "TypesHU",
+          "persistentUuid": "6697d145-665f-4c34-9b44-9be58339f7e1",
+          "width": 0,
+          "x": 970,
+          "y": 210,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "TypesLA",
+          "persistentUuid": "236b7bb6-e264-4dbc-8d07-b4e9fe8ea8d2",
+          "width": 0,
+          "x": 970,
+          "y": 260,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 30,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Neighboring",
+          "persistentUuid": "fd292a78-8a4a-498a-aedb-5c473d1c7589",
+          "width": 300,
+          "x": 970,
+          "y": 310,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Non_Neighboring",
+          "persistentUuid": "b45f746a-bfaf-4364-ab6d-60254639ca46",
+          "width": 0,
+          "x": 970,
+          "y": 360,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "ID",
+          "persistentUuid": "964922e9-939a-4ee8-a313-62a65c26069e",
+          "width": 0,
+          "x": 970,
+          "y": 10,
           "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 48,
+          "height": 80,
+          "layer": "",
+          "name": "Upload",
+          "persistentUuid": "2c967d73-ac46-4de2-a163-03da6e0b51ee",
+          "width": 300,
+          "x": 969,
+          "y": 630,
+          "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -421,6 +495,29 @@
             "placeholder": "SorTáv",
             "fontResourceName": "",
             "fontSize": 20,
+            "inputType": "number",
+            "textColor": "0;0;0",
+            "fillColor": "255;255;255",
+            "fillOpacity": 255,
+            "borderColor": "0;0;0",
+            "borderOpacity": 255,
+            "borderWidth": 1,
+            "readOnly": false,
+            "disabled": false
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "TypesHU",
+          "type": "TextInput::TextInputObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "initialValue": "",
+            "placeholder": "Fajták(HU)",
+            "fontResourceName": "",
+            "fontSize": 20,
             "inputType": "text",
             "textColor": "0;0;0",
             "fillColor": "255;255;255",
@@ -431,11 +528,190 @@
             "readOnly": false,
             "disabled": false
           }
+        },
+        {
+          "assetStoreId": "",
+          "name": "TypesLA",
+          "type": "TextInput::TextInputObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "initialValue": "",
+            "placeholder": "Fajták(LA)",
+            "fontResourceName": "",
+            "fontSize": 20,
+            "inputType": "text",
+            "textColor": "0;0;0",
+            "fillColor": "255;255;255",
+            "fillOpacity": 255,
+            "borderColor": "0;0;0",
+            "borderOpacity": 255,
+            "borderWidth": 1,
+            "readOnly": false,
+            "disabled": false
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "Neighboring",
+          "type": "TextInput::TextInputObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "initialValue": "",
+            "placeholder": "Ültethető mellé",
+            "fontResourceName": "",
+            "fontSize": 20,
+            "inputType": "text",
+            "textColor": "0;0;0",
+            "fillColor": "255;255;255",
+            "fillOpacity": 255,
+            "borderColor": "0;0;0",
+            "borderOpacity": 255,
+            "borderWidth": 1,
+            "readOnly": false,
+            "disabled": false
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "Non_Neighboring",
+          "type": "TextInput::TextInputObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "initialValue": "",
+            "placeholder": "Nem ültethető mellé",
+            "fontResourceName": "",
+            "fontSize": 20,
+            "inputType": "text",
+            "textColor": "0;0;0",
+            "fillColor": "255;255;255",
+            "fillOpacity": 255,
+            "borderColor": "0;0;0",
+            "borderOpacity": 255,
+            "borderWidth": 1,
+            "readOnly": false,
+            "disabled": false
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "ID",
+          "type": "TextInput::TextInputObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "initialValue": "",
+            "placeholder": "ID",
+            "fontResourceName": "",
+            "fontSize": 20,
+            "inputType": "number",
+            "textColor": "0;0;0",
+            "fillColor": "255;255;255",
+            "fillOpacity": 255,
+            "borderColor": "0;0;0",
+            "borderOpacity": 255,
+            "borderWidth": 1,
+            "readOnly": true,
+            "disabled": false
+          }
+        },
+        {
+          "assetStoreId": "615de0316452630b9f4f6a39decc82e2449b82c1afd1ff24d6470dad2922177b",
+          "name": "Upload",
+          "type": "PanelSpriteButton::PanelSpriteButton",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "LeftPadding": 16,
+            "RightPadding": 16,
+            "PressedLabelOffsetY": 10,
+            "BottomPadding": 32,
+            "TopPadding": 16,
+            "HoveredFadeOutDuration": 0.25
+          },
+          "childrenContent": {
+            "Hovered": {
+              "bottomMargin": 32,
+              "height": 106,
+              "leftMargin": 16,
+              "rightMargin": 16,
+              "texture": "Yellow Button_Hovered.png",
+              "tiled": false,
+              "topMargin": 16,
+              "width": 256
+            },
+            "Idle": {
+              "bottomMargin": 32,
+              "height": 106,
+              "leftMargin": 16,
+              "rightMargin": 16,
+              "texture": "Yellow Button_Idle.png",
+              "tiled": false,
+              "topMargin": 16,
+              "width": 256
+            },
+            "Label": {
+              "bold": false,
+              "italic": false,
+              "smoothed": true,
+              "underlined": false,
+              "string": "Upload",
+              "font": "",
+              "textAlignment": "center",
+              "characterSize": 32,
+              "color": {
+                "b": 42,
+                "g": 87,
+                "r": 139
+              },
+              "content": {
+                "bold": false,
+                "isOutlineEnabled": false,
+                "isShadowEnabled": false,
+                "italic": false,
+                "outlineColor": "255;255;255",
+                "outlineThickness": 2,
+                "shadowAngle": 90,
+                "shadowBlurRadius": 2,
+                "shadowColor": "0;0;0",
+                "shadowDistance": 4,
+                "shadowOpacity": 127,
+                "smoothed": true,
+                "underlined": false,
+                "text": "Upload",
+                "font": "",
+                "textAlignment": "center",
+                "verticalTextAlignment": "top",
+                "characterSize": 32,
+                "color": "139;87;42"
+              }
+            },
+            "Pressed": {
+              "bottomMargin": 16,
+              "height": 106,
+              "leftMargin": 16,
+              "rightMargin": 16,
+              "texture": "Yellow Button_Pressed.png",
+              "tiled": false,
+              "topMargin": 32,
+              "width": 256
+            }
+          }
         }
       ],
       "objectsFolderStructure": {
         "folderName": "__ROOT",
         "children": [
+          {
+            "objectName": "ID"
+          },
           {
             "objectName": "NameHU"
           },
@@ -446,11 +722,173 @@
             "objectName": "RowDistance"
           },
           {
+            "objectName": "TypesHU"
+          },
+          {
+            "objectName": "TypesLA"
+          },
+          {
+            "objectName": "Neighboring"
+          },
+          {
+            "objectName": "Non_Neighboring"
+          },
+          {
             "objectName": "Add"
+          },
+          {
+            "objectName": "Upload"
           }
         ]
       },
-      "events": [],
+      "events": [
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Getting Data From Firebase",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "DepartScene"
+                  },
+                  "parameters": [
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Firebase::FirestoreStartQuery"
+                  },
+                  "parameters": [
+                    "\"GetPlants\"",
+                    "\"Plants\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Firebase::FirestoreExecuteQuery"
+                  },
+                  "parameters": [
+                    "\"GetPlants\"",
+                    "DataQueryResult",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Wait"
+                  },
+                  "parameters": [
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "DataToLoad",
+                    "=",
+                    "ToNumber(ToJSON(DataQueryResult.size))"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "DataToLoad",
+                    "!=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "ID",
+                    "Text",
+                    "=",
+                    "DataToLoad"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Repeat",
+                  "repeatExpression": "DataToLoad",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Firebase::FirestoreGetField"
+                      },
+                      "parameters": [
+                        "DataStructure[DataCount]",
+                        "\"Plants\"",
+                        "DataCount",
+                        "",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "DataCount",
+                        "+",
+                        "1"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "ID generation",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": []
+            }
+          ],
+          "parameters": []
+        }
+      ],
       "layers": [
         {
           "ambientLightColorB": 200,
@@ -10345,6 +10783,5 @@
       ]
     }
   ],
-  "externalLayouts": [],
-  "externalSourceFiles": []
+  "externalLayouts": []
 }
