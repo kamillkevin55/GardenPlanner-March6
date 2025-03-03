@@ -2873,7 +2873,7 @@
                 "textG": 0,
                 "textR": 0
               },
-              "comment": "Doesn't work"
+              "comment": "Doesn't work fully"
             },
             {
               "type": "BuiltinCommonInstructions::Standard",
@@ -2978,6 +2978,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "disabled": true,
           "folded": true,
           "name": "Temporary Camera move",
           "source": "",
