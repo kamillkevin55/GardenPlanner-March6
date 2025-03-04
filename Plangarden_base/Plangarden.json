@@ -343,6 +343,26 @@
           "name": "VarRowDistance",
           "type": "number",
           "value": 0
+        },
+        {
+          "name": "SceneVar_TypesHU",
+          "type": "structure",
+          "children": []
+        },
+        {
+          "name": "SceneVar_JSONTypesHU",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "SceneVar_TypesLA",
+          "type": "structure",
+          "children": []
+        },
+        {
+          "name": "SceneVar_JSONTypesLA",
+          "type": "string",
+          "value": ""
         }
       ],
       "instances": [
@@ -2964,6 +2984,75 @@
                     "VarID",
                     "\"RowDistance\"",
                     "VarRowDistance",
+                    "",
+                    "yes"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+                  },
+                  "parameters": [
+                    "Submit_button",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "SceneVar_TypesHU[0]",
+                    "=",
+                    "\"a\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "SceneVar_TypesHU[1]",
+                    "=",
+                    "\"b\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "SceneVar_TypesHU[2]",
+                    "=",
+                    "\"c\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "SceneVar_JSONTypesHU",
+                    "=",
+                    "ToJSON(SceneVar_TypesHU)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Firebase::FirestoreWriteField"
+                  },
+                  "parameters": [
+                    "\"Plants\"",
+                    "VarID",
+                    "\"TypesHU\"",
+                    "SceneVar_JSONTypesHU",
                     "",
                     "yes"
                   ]
