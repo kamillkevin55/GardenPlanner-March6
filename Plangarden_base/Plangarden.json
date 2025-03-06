@@ -254,6 +254,14 @@
           "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/44aceaa249d2ecb8bfe3eb7bedcb17aac44c0f5f13f9f58d85427a5afa7e92f0_CarterOne-Regular.ttf",
           "name": "CarterOne-Regular.ttf"
         }
+      },
+      {
+        "file": "assets/NewTiledSprite4.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"pskl\":{}}",
+        "name": "NewTiledSprite3",
+        "smoothed": false,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -291,7 +299,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.26167741169921627,
+        "zoomFactor": 0.3895856273827321,
         "windowMask": false
       },
       "objectsGroups": [
@@ -377,22 +385,6 @@
         }
       ],
       "instances": [
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
-          "height": 64000,
-          "layer": "",
-          "name": "Background",
-          "persistentUuid": "1670fa20-7e8c-492e-9dc9-0c7a2cf99d3e",
-          "width": 64000,
-          "x": -32000,
-          "y": -32000,
-          "zOrder": 1,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
         {
           "angle": 0,
           "customSize": false,
@@ -749,22 +741,6 @@
         },
         {
           "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
-          "layer": "",
-          "name": "Plant",
-          "persistentUuid": "6b1776aa-4330-4502-bcd3-fd05ff0f00f1",
-          "width": 0,
-          "x": 640,
-          "y": 384,
-          "zOrder": 31,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
           "customSize": true,
           "depth": 48,
           "height": 70,
@@ -794,13 +770,30 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 64000,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Untilled",
+          "persistentUuid": "f72fd8ea-7299-428d-89c9-5c35401b163d",
+          "width": 64000,
+          "x": -32000,
+          "y": -32000,
+          "zOrder": 34,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
         {
           "assetStoreId": "",
           "height": 32,
-          "name": "Background",
+          "name": "Tilled",
           "texture": "NewTiledSprite",
           "type": "TiledSpriteObject::TiledSprite",
           "width": 32,
@@ -2245,13 +2238,27 @@
               "width": 192
             }
           }
+        },
+        {
+          "assetStoreId": "",
+          "height": 32,
+          "name": "Untilled",
+          "texture": "NewTiledSprite3",
+          "type": "TiledSpriteObject::TiledSprite",
+          "width": 32,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
         }
       ],
       "objectsFolderStructure": {
         "folderName": "__ROOT",
         "children": [
           {
-            "objectName": "Background"
+            "objectName": "Tilled"
+          },
+          {
+            "objectName": "Untilled"
           },
           {
             "objectName": "Cursorpos"
@@ -2405,7 +2412,7 @@
                     "Upload_button",
                     "UIBG_upload.X()",
                     "25",
-                    ""
+                    "\"UI\""
                   ]
                 },
                 {
@@ -2442,7 +2449,7 @@
                     "List_button",
                     "UIBG_List.X()",
                     "25",
-                    ""
+                    "\"UI\""
                   ]
                 },
                 {
