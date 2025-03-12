@@ -262,6 +262,14 @@
         "name": "NewTiledSprite3",
         "smoothed": false,
         "userAdded": false
+      },
+      {
+        "file": "assets/Cursor.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "Cursor",
+        "smoothed": false,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -299,7 +307,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.3895856273827321,
+        "zoomFactor": 0.4027225833325948,
         "windowMask": false
       },
       "objectsGroups": [
@@ -757,33 +765,32 @@
         },
         {
           "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
-          "layer": "UI",
-          "name": "Cursorpos",
-          "persistentUuid": "e894e522-1d2b-4064-857c-b0ebe3275d47",
-          "width": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 1080,
+          "layer": "",
+          "name": "Untilled",
+          "persistentUuid": "f72fd8ea-7299-428d-89c9-5c35401b163d",
+          "width": 1920,
           "x": 0,
-          "y": 1039,
-          "zOrder": 33,
+          "y": 0,
+          "zOrder": 34,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
         },
         {
           "angle": 0,
-          "customSize": true,
-          "depth": 0,
-          "height": 64000,
+          "customSize": false,
+          "height": 0,
           "keepRatio": true,
-          "layer": "",
-          "name": "Untilled",
-          "persistentUuid": "f72fd8ea-7299-428d-89c9-5c35401b163d",
-          "width": 64000,
-          "x": -32000,
-          "y": -32000,
-          "zOrder": 34,
+          "layer": "UI",
+          "name": "Cursor",
+          "persistentUuid": "874ede28-64dd-4434-856a-82df49bd5639",
+          "width": 0,
+          "x": 263,
+          "y": -161,
+          "zOrder": 100,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -2249,6 +2256,67 @@
           "variables": [],
           "effects": [],
           "behaviors": []
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Cursor",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Cursor",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "metadata": "{\"pskl\":{}}",
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Cursor",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 50,
+                            "y": 0
+                          },
+                          {
+                            "x": 50,
+                            "y": 50
+                          },
+                          {
+                            "x": 0,
+                            "y": 50
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -2352,6 +2420,9 @@
           },
           {
             "objectName": "List_button"
+          },
+          {
+            "objectName": "Cursor"
           }
         ]
       },
@@ -2424,6 +2495,16 @@
                     "=",
                     "UIBG_upload.X() - Upload_button.Width() - 50"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "Upload_button",
+                    "=",
+                    "35"
+                  ]
                 }
               ]
             },
@@ -2460,6 +2541,62 @@
                     "List_button",
                     "=",
                     "UIBG_List.X()+UIBG_List.Width()+50"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "List_button",
+                    "=",
+                    "35"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "DepartScene"
+                  },
+                  "parameters": [
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ScalableCapability::ScalableBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "Cursor",
+                    "Scale",
+                    "=",
+                    "0.8"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MettreXY"
+                  },
+                  "parameters": [
+                    "Cursor",
+                    "=",
+                    "CursorX()",
+                    "=",
+                    "CursorY()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "CacheSouris"
+                  },
+                  "parameters": [
+                    ""
                   ]
                 }
               ]
@@ -2554,6 +2691,18 @@
                 "Text",
                 "=",
                 "\"X: \" + ToString(CursorX()) + \"; Y: \" + ToString(CursorY())"
+              ]
+            },
+            {
+              "type": {
+                "value": "MettreXY"
+              },
+              "parameters": [
+                "Cursor",
+                "=",
+                "CursorX()",
+                "=",
+                "CursorY()"
               ]
             }
           ]
